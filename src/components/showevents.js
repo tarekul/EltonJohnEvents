@@ -38,14 +38,15 @@ class ShowEvents extends React.Component {
         const eventsInCity = eventlist["Items"].filter(element=>{
             if(city === element['VenueCity']) return element
         })
+        console.log(eventsInCity)
         this.setState({search:[],eventsInCity})
     }
 
     suggestedCities = ()=>{
         const {search} = this.state
-        return <ul class="list-group searchlist" >
+        return <ul class="list-group searchlist rounded" style={{position:'absolute',zIndex:10}} >
             {search.map((city,i)=>{
-                return <li class="list-group-item" key={i} onClick={e=>this.cityEvents(e)}>{city}</li>
+                return <li class="list-group-item rounded" key={i} onClick={e=>this.cityEvents(e)}>{city}</li>
             })}
         </ul>
     }
@@ -53,8 +54,8 @@ class ShowEvents extends React.Component {
         const {search, eventsInCity} = this.state
         const showCities = search.length > 0 ? this.suggestedCities() : ''
         return <>
-            <div class='container' style={{marginTop:'20px'}}>
-                <div className='searchbox'>
+            <div class='container' style={{marginTop:'20px',position:'relative'}} onKeyDown={e=>{if(e.keyCode=== 27) this.setState({search:[]})}}>
+                <div className='searchbox rounded'>
                     <label for="exampleInputEmail1" style={{color:'white',fontSize:'25px'}}>Search by location</label>
                     <input type="text" className="form-control"  aria-describedby="inputGroup-sizing-default" onChange={e=>this.onChange(e)} />
                 </div>

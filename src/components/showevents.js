@@ -55,9 +55,20 @@ class ShowEvents extends React.Component {
         const showCities = search.length > 0 ? this.suggestedCities() : ''
         return <>
             <div class='container' style={{marginTop:'20px',position:'relative'}} onKeyDown={e=>{if(e.keyCode=== 27) this.setState({search:[]})}}>
-                <div className='searchbox rounded'>
-                    <label for="exampleInputEmail1" style={{color:'white',fontSize:'25px'}}>Search by location</label>
-                    <input type="text" className="form-control"  aria-describedby="inputGroup-sizing-default" onChange={e=>this.onChange(e)} />
+                <div class='row'>
+                    <div class='col'>
+                        <div className='searchbox rounded'>
+                            <label for="exampleInputEmail1" style={{color:'white',fontSize:'25px'}}>Search by location</label>
+                            <input type="text" className="form-control"  aria-describedby="inputGroup-sizing-default" onChange={e=>this.onChange(e)} />
+                        </div>
+                    </div>
+                    <div class='col'>
+                        <div className='advanced rounded' style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+                            <h3 style={{color:'white',fontSize:'25px'}}>Advanced Search</h3>
+                            <button type="button" class="btn btn-light">Light</button>
+                            
+                        </div>
+                    </div>
                 </div>
                 {showCities}
                 <EventInfoDisplay eventsInCity={eventsInCity}/>

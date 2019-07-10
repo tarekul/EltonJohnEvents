@@ -1,9 +1,16 @@
 .searchbox{
     height:12vh;
     background-color: #30344a;
-    width: 40vw;
+    /* width: 40vw; */
     padding-left: 20px;
     padding-right: 20px;
+}
+
+.advanced{
+    height:12vh;
+    background-color: #30344a;
+    /* width: 40vw; */
+    padding: 20px;
 }
 
 .searchlist{

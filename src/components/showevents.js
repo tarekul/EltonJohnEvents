@@ -64,8 +64,8 @@ class ShowEvents extends React.Component {
                     </div>
                     <div class='col'>
                         <div className='advanced rounded' style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
-                            <h3 style={{color:'white',fontSize:'25px'}}>Advanced Search</h3>
-                            <button type="button" class="btn btn-light">Light</button>
+                            <h3 style={{color:'white',fontSize:'30px'}}><i className="fa fa-bars"></i> &nbsp;Advanced Search</h3>
+                            <button type="button" className="btn btn-light" id='adv-srch-btn' style={{fontSize:'18px'}}>Click Here</button>
                             
                         </div>
                     </div>

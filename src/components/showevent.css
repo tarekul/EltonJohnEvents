@@ -16,3 +16,7 @@
 .searchlist{
     width: 40vw;
 }
+
+#adv-srch-btn:hover {
+    color: white;
+}
